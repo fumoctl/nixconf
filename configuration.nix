@@ -156,6 +156,9 @@
         pkgs.unstable.gamemode
       ];
     })
+    unstable.haskellPackages.misfortune
+    unstable.cowsay
+    unstable.lolcat
   ];
 
   programs.direnv = {
