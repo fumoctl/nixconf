@@ -140,6 +140,7 @@
     unrar
     fastfetch
     thunderbird
+    kdePackages.kamoso
     mpv
     appimage-run
     mangohud
