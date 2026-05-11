@@ -191,12 +191,12 @@
     "com.github.tchx84.Flatseal"
     "com.discordapp.Discord"
     "com.protonvpn.www"
-    "com.stremio.Stremio"
     "com.vysp3r.ProtonPlus"
     "net.retrodeck.retrodeck"
     "org.vinegarhq.Sober"
     "com.obsproject.Studio"
     "website.i2pd.i2pd"
+    "org.onlyoffice.desktopeditors"
   ];
   # Dynamically linked executables
   programs.nix-ld.enable = true;
