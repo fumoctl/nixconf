@@ -1,9 +1,11 @@
 # FumoFumoEnjoyer's NixOS Config
 ### Features
+* KDE Plasma
 * XanMod Kernel
 * Virtualization enabled by default (Podman and Qemu/KVM)
 * Systemd without userdb
 * Sane gaming defaults (Increased nofile limits and vm.max_map_count)
+* Quad9 DNS over TLS ONLY
 
 ### Prerequisites
 * NixOS Installed (Minimal or KDE Plasma Preferred to avoid Home dir cluttering)
