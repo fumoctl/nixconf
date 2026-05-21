@@ -9,6 +9,17 @@
   home.homeDirectory = "/home/fumo";
   home.stateVersion = "25.11";
 
+  programs.ssh = {
+  enable = true;
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/fumossh.key"; # Automatically routes this key for GitHub
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
     signing = {
