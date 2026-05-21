@@ -177,7 +177,6 @@
     file
     sbctl
     dnsmasq
-    gnupg
     waypipe
     unstable.brave
     unstable.antigravity-fhs
@@ -192,6 +191,12 @@
     goverlay
     lact
     unstable.lsfg-vk-ui
+    (pkgs.unstable.heroic.override {
+      extraPkgs = p: [
+        pkgs.unstable.gamescope
+        pkgs.unstable.gamemode
+      ];
+    })
     ethtool
     pciutils
     mesa-demos
@@ -199,18 +204,18 @@
     unstable.haskellPackages.misfortune
     unstable.cowsay
     unstable.lolcat
-    (pkgs.unstable.heroic.override {
-      extraPkgs = p: [
-        pkgs.unstable.gamescope
-        pkgs.unstable.gamemode
-      ];
-    })
     protonvpn-gui
   ];
 
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-all;
   };
 
   programs.zsh = {
@@ -228,20 +233,25 @@
     gamescopeSession.enable = true;
   };
 
-  services.flatpak.enable = true;
-  services.flatpak.packages = [
-    "io.gitlab.librewolf-community"
-    "org.garudalinux.firedragon"
-    "com.usebottles.bottles"
-    "org.qbittorrent.qBittorrent"
-    "com.github.tchx84.Flatseal"
-    "com.discordapp.Discord"
-    "com.vysp3r.ProtonPlus"
-    "com.github.Matoking.protontricks"
-    "com.obsproject.Studio"
-    "website.i2pd.i2pd"
-    "org.onlyoffice.desktopeditors"
-  ];
+  services.flatpak={
+    enable = true;
+    packages = [
+      "io.gitlab.librewolf-community"
+      "org.garudalinux.firedragon"
+      "org.qbittorrent.qBittorrent"
+      "com.github.tchx84.Flatseal"
+      "com.obsproject.Studio"
+      "website.i2pd.i2pd"
+      "org.onlyoffice.desktopeditors"
+      "com.usebottles.bottles"
+      "com.vysp3r.ProtonPlus"
+      "com.github.Matoking.protontricks"
+      "com.discordapp.Discord"
+    ];
+    overrides.settings = {
+      "com.usebottles.bottles".Context.filesystems = [ "home" ];
+    };
+  };
   # Dynamically linked executables
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
