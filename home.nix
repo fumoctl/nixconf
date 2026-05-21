@@ -11,6 +11,10 @@
 
   programs.git = {
     enable = true;
+    signing = {
+      key = "35FAC098F119E8FA";
+      signByDefault = true;
+    };
     settings = {
       user = {
         name = "JuanU";
