@@ -159,7 +159,7 @@
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
-  users.users.fumo = {
+  users.users.fumoctl = {
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];

@@ -5,8 +5,8 @@
     inputs.plasma-manager.homeModules.plasma-manager
   ];
 
-  home.username = "fumo";
-  home.homeDirectory = "/home/fumo";
+  home.username = "fumoctl";
+  home.homeDirectory = "/home/fumoctl";
   home.stateVersion = "25.11";
 
   programs.ssh = {

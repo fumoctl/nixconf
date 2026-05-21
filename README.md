@@ -1,4 +1,4 @@
-# FumoFumoEnjoyer's NixOS Config
+# Fumoctl's NixOS Config
 ### Features
 * KDE Plasma
 * XanMod Kernel
