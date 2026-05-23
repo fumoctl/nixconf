@@ -10,12 +10,16 @@
   home.stateVersion = "25.11";
 
   programs.ssh = {
-  enable = true;
+    enable = true;
     matchBlocks = {
       "github.com" = {
         hostname = "github.com";
         user = "git";
-        identityFile = "~/.ssh/fumossh.key"; # Automatically routes this key for GitHub
+        identityFile = "~/.ssh/fumossh.key";
+      };
+      "*" = {
+        identityFile = "~/.ssh/id_ed25519";
+        identitiesOnly = true;
       };
     };
   };
