@@ -5,8 +5,7 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
@@ -15,37 +14,21 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/mapper/crypt";
-      fsType = "btrfs";
-      options = [ "subvol=root" ];
+    { device = "/dev/mapper/cryptroot";
+      fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/47f52ef0-e7fd-451e-b374-3460aa85f49d";
-
-  fileSystems."/home" =
-    {
-      device = "/dev/mapper/crypt";
-      fsType = "btrfs";
-      options = [ "subvol=home" ];
-    };
-
-  fileSystems."/nix" =
-    {
-      device = "/dev/mapper/crypt";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
-    };
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/9bc2c04a-76a4-4043-adce-057f2c913836";
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/12CE-A600";
+    { device = "/dev/disk/by-uuid/E786-51A5";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/6f69be19-d0d0-4fee-9c85-e8e87059ecf4"; }];
+    [ { device = "/dev/disk/by-uuid/0afc49cb-af3f-476f-99f1-002a1a380457"; }
+    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
