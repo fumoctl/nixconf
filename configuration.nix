@@ -7,7 +7,6 @@
     ];
 
   nixpkgs.overlays = [
-    inputs.antigravity-nix.overlays.default
     (final: prev: {
       unstable = import inputs.nixpkgs-unstable {
         system = prev.stdenv.hostPlatform.system;
@@ -180,9 +179,7 @@
     dnsmasq
     waypipe
     unstable.brave
-    unstable.vscodium-fhs
-    google-antigravity
-    google-antigravity-cli
+    unstable.vscode-fhs
     _7zz
     unrar
     fastfetch
@@ -251,9 +248,6 @@
       "com.github.Matoking.protontricks"
       "com.discordapp.Discord"
     ];
-    overrides.settings = {
-      "com.usebottles.bottles".Context.filesystems = [ "home" ];
-    };
   };
   # Dynamically linked executables
   programs.nix-ld.enable = true;
