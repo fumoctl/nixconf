@@ -180,7 +180,9 @@
     dnsmasq
     waypipe
     unstable.brave
-    google-antigravity-ide
+    unstable.vscodium-fhs
+    google-antigravity
+    google-antigravity-cli
     _7zz
     unrar
     fastfetch
