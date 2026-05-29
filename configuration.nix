@@ -7,6 +7,7 @@
     ];
 
   nixpkgs.overlays = [
+    inputs.antigravity-nix.overlays.default
     (final: prev: {
       unstable = import inputs.nixpkgs-unstable {
         system = prev.stdenv.hostPlatform.system;
@@ -179,7 +180,7 @@
     dnsmasq
     waypipe
     unstable.brave
-    unstable.antigravity-fhs
+    google-antigravity-ide
     _7zz
     unrar
     fastfetch
