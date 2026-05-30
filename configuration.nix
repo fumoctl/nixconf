@@ -179,7 +179,7 @@
     dnsmasq
     waypipe
     unstable.brave
-    unstable.vscode-fhs
+    unstable.vscodium-fhs
     _7zz
     unrar
     fastfetch
