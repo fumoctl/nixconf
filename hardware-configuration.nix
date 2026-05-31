@@ -15,20 +15,20 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/cryptroot";
+    { device = "/dev/mapper/crypt";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/9bc2c04a-76a4-4043-adce-057f2c913836";
+  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/e2564ff4-4cc9-4f27-a289-574e47a39e9b";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E786-51A5";
+    { device = "/dev/disk/by-uuid/4558-D380";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0afc49cb-af3f-476f-99f1-002a1a380457"; }
+    [ { device = "/dev/disk/by-uuid/7de46b7d-6fb8-408f-aaaf-28ab4decd62d"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
