@@ -180,6 +180,8 @@
     waypipe
     unstable.brave
     unstable.vscodium-fhs
+    unstable.claude-code
+    unstable.winboat
     _7zz
     unrar
     fastfetch
@@ -204,7 +206,7 @@
     unstable.haskellPackages.misfortune
     unstable.cowsay
     unstable.lolcat
-    protonvpn-gui
+    unstable.proton-vpn
   ];
 
   programs.direnv = {
@@ -242,7 +244,6 @@
       "com.github.tchx84.Flatseal"
       "com.obsproject.Studio"
       "website.i2pd.i2pd"
-      "org.onlyoffice.desktopeditors"
       "com.usebottles.bottles"
       "com.vysp3r.ProtonPlus"
       "com.github.Matoking.protontricks"
@@ -292,7 +293,7 @@
   programs.virt-manager.enable = true;
   services.spice-vdagentd.enable = true; # Clipboard sharing with VMs
 
-  documentation.man.generateCaches = true;
+  documentation.man.cache.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.11";
