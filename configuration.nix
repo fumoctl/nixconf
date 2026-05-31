@@ -182,6 +182,7 @@
     unstable.vscodium-fhs
     unstable.claude-code
     unstable.winboat
+    unstable.libreoffice-fresh
     _7zz
     unrar
     fastfetch
